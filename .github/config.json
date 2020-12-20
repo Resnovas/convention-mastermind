@@ -1,0 +1,30 @@
+{
+  "runners": [
+    {
+      "root": ".",
+      "projectType": "node",
+      "versioning": "SemVer",
+      "prereleaseName": "alpha",
+      "sharedConfig": {
+        "enforceConventions": {
+          "onColumn": ["Accepted", "Reviewing"],
+          "conventions": [
+            {
+              "requires": 1,
+              "contexts": [
+                "workflow",
+                "release",
+                "label",
+                "variable",
+                "installer",
+                "deps",
+                "deps-dev"
+              ],
+              "conditions": "semanticTitle"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
