@@ -42,7 +42,12 @@ export default class conventionMastermind {
    * @since 1.0.0
    */
   constructor(client: GitHub, options: Options) {
-    log(new loggingData('100', `Superlabeller Constructed: ${options}`))
+    log(
+      new loggingData(
+        '100',
+        `Convention Mastermind Constructed: ${options.toString()}`
+      )
+    )
     this.client = client
     this.opts = options
     this.configJSON = options.configJSON
@@ -142,7 +147,6 @@ export default class conventionMastermind {
    * @since 1.0.0
    */
   async processConfig(): Promise<Runners> {
-    console.log(this.configJSON.runners)
     if (!this.configJSON?.runners[0]) {
       if (!fs.existsSync(this.configPath)) {
         throw new Error(`config not found at "${this.configPath}"`)
